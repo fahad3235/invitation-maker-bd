@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitation Maker BD</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="no-print">
+  <div class="header-inner">
+    <div>
+      <h1 id="h-title">Invitation Maker BD</h1>
+      <p id="h-sub" class="sub"></p>
+    </div>
+    <button id="langBtn" type="button">Bangla</button>
+  </div>
+</header>
+
+<main>
+  <p id="checkNote" class="note no-print"></p>
+  <ul id="formErrors" class="errors no-print" hidden></ul>
+  <p id="flash" class="flash no-print" hidden></p>
+
+  <div class="layout">
+    <section class="panel no-print" aria-label="Invitation form">
+      <div class="field">
+        <label id="l-template" for="f-template"></label>
+        <select id="f-template"></select>
+      </div>
+      <div class="field">
+        <label id="l-style" for="f-style"></label>
+        <select id="f-style"></select>
+      </div>
+      <div class="field">
+        <label id="l-hosts" for="f-hosts"></label>
+        <input id="f-hosts" type="text" maxlength="120" autocomplete="off">
+      </div>
+      <div class="field">
+        <label id="l-honoree" for="f-honoree"></label>
+        <input id="f-honoree" type="text" maxlength="120" autocomplete="off">
+      </div>
+      <div class="field">
+        <label id="l-title" for="f-title"></label>
+        <input id="f-title" type="text" maxlength="100" autocomplete="off">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label id="l-date" for="f-date"></label>
+          <input id="f-date" type="date">
+        </div>
+        <div class="field">
+          <label id="l-time" for="f-time"></label>
+          <input id="f-time" type="time">
+        </div>
+      </div>
+      <div class="field">
+        <label id="l-venue" for="f-venue"></label>
+        <input id="f-venue" type="text" maxlength="200" autocomplete="off">
+      </div>
+      <div class="field">
+        <label id="l-dress" for="f-dress"></label>
+        <input id="f-dress" type="text" maxlength="100" autocomplete="off">
+      </div>
+      <div class="field">
+        <label id="l-rsvp" for="f-rsvp"></label>
+        <input id="f-rsvp" type="text" maxlength="120" autocomplete="off">
+      </div>
+      <div class="field">
+        <label id="l-message" for="f-message"></label>
+        <textarea id="f-message" rows="3" maxlength="500"></textarea>
+      </div>
+      <div class="actions">
+        <button id="btnSave" type="button" class="primary"></button>
+        <button id="btnCopy" type="button"></button>
+        <button id="btnPrint" type="button"></button>
+      </div>
+    </section>
+
+    <section class="preview-wrap" aria-label="Preview">
+      <h2 id="previewTitle" class="no-print"></h2>
+      <div id="printArea">
+        <div id="card" class="card style-gold"></div>
+        <p id="emptyPreview" class="empty no-print"></p>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel no-print">
+    <h2 id="draftsTitle"></h2>
+    <ul id="draftList" class="drafts"></ul>
+    <p id="noDrafts" class="muted"></p>
+  </section>
+
+  <section class="panel no-print">
+    <h2 id="exportTitle">Backup</h2>
+    <label id="l-export" for="exportText"></label>
+    <textarea id="exportText" rows="4" readonly></textarea>
+    <div class="actions">
+      <button id="btnExport" type="button"></button>
+    </div>
+    <label id="l-import" for="importText"></label>
+    <textarea id="importText" rows="4"></textarea>
+    <div class="actions">
+      <button id="btnImport" type="button"></button>
+    </div>
+    <div class="erase-box">
+      <label id="l-erase" for="eraseInput"></label>
+      <input id="eraseInput" type="text" maxlength="10" autocomplete="off">
+      <button id="btnErase" type="button" class="danger"></button>
+    </div>
+  </section>
+
+  <footer class="no-print">
+    <p>Invitation Maker BD - offline. Your invitations stay in this browser. No details are invented: the card shows only what you type.</p>
+  </footer>
+</main>
+<script src="js/logic.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

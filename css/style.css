@@ -1,0 +1,73 @@
+/* invitation-maker-bd - app styles + 4 pure-CSS card styles + print CSS. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #f4f1ea; color: #222; }
+header { background: #1f2a44; color: #fff; }
+.header-inner { max-width: 1100px; margin: 0 auto; padding: 16px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.header-inner h1 { margin: 0; font-size: 26px; }
+.sub { margin: 4px 0 0; opacity: .85; font-size: 14px; }
+#langBtn { background: #fff; color: #1f2a44; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; cursor: pointer; }
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+.note { background: #fff7d6; border: 1px solid #e8c547; border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+.errors { background: #fde8e8; border: 1px solid #e57373; border-radius: 8px; padding: 10px 16px; color: #8b1a1a; }
+.flash { background: #e6f4ea; border: 1px solid #7bc98a; border-radius: 8px; padding: 10px 12px; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.panel { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-top: 16px; }
+.layout .panel { margin-top: 0; }
+.field { margin-bottom: 12px; }
+.field label { display: block; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.field input, .field select, .field textarea, .erase-box input { width: 100%; padding: 9px 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 15px; background: #fff; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+button { border: 1px solid #1f2a44; background: #fff; color: #1f2a44; border-radius: 8px; padding: 9px 14px; font-weight: 600; cursor: pointer; }
+button.primary { background: #1f2a44; color: #fff; }
+button.danger { background: #b3261e; border-color: #b3261e; color: #fff; }
+button:disabled { opacity: .5; cursor: default; }
+.preview-wrap h2 { margin: 0 0 10px; font-size: 18px; }
+.empty { text-align: center; color: #666; }
+.drafts { list-style: none; padding: 0; margin: 0; }
+.drafts li { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid #eee; }
+.drafts li:last-child { border-bottom: 0; }
+.draft-meta { font-size: 14px; }
+.draft-meta small { color: #666; display: block; }
+.muted { color: #666; }
+.erase-box { margin-top: 16px; display: flex; gap: 8px; align-items: end; flex-wrap: wrap; }
+.erase-box label { width: 100%; font-weight: 600; font-size: 13px; }
+.erase-box input { width: 160px; }
+footer { margin-top: 20px; font-size: 13px; color: #555; }
+
+/* ---- the invitation card ---- */
+.card { background: #fffdf6; border-radius: 14px; padding: 34px 26px; text-align: center; min-height: 420px; display: flex; flex-direction: column; justify-content: center; gap: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.10); overflow-wrap: anywhere; }
+.card-template { text-transform: uppercase; letter-spacing: 3px; font-size: 12px; font-weight: 700; }
+.card-title { font-size: 32px; line-height: 1.2; font-weight: 800; }
+.card-hosts { font-size: 16px; }
+.card-honoree { font-size: 15px; font-style: italic; }
+.card-divider { width: 72px; height: 2px; background: currentColor; opacity: .35; margin: 10px auto; }
+.card-row { font-size: 15px; }
+.card-row span { font-weight: 700; }
+.card-message { margin-top: 10px; font-size: 15px; line-height: 1.5; white-space: pre-wrap; }
+
+.card.style-gold { border: 3px double #b8860b; color: #4a3400; background: linear-gradient(#fffdf6, #fbf3d5); }
+.card.style-gold .card-title { color: #8a6400; }
+.card.style-floral { border: 2px solid #c98bb9; color: #4a2340; background: #fdf4fa; }
+.card.style-floral .card-title { color: #8e3a76; }
+.card.style-minimal { border: 1px solid #222; border-radius: 4px; color: #111; background: #fff; box-shadow: none; }
+.card.style-minimal .card-title { font-weight: 700; letter-spacing: .5px; }
+.card.style-festive { border: 3px solid #d94f30; color: #5a1a0c; background: linear-gradient(135deg, #fff6e8, #ffe3da); }
+.card.style-festive .card-title { color: #c23a1e; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .header-inner h1 { font-size: 21px; }
+  .card { min-height: 360px; padding: 26px 18px; }
+  .card-title { font-size: 26px; }
+  .field-row { grid-template-columns: 1fr; }
+}
+
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  main { max-width: none; margin: 0; padding: 0; }
+  .layout { display: block; }
+  #printArea { display: block; }
+  .card { box-shadow: none; border-radius: 0; min-height: 0; page-break-inside: avoid; }
+}
